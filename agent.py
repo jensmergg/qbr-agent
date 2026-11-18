@@ -31,7 +31,9 @@ Rules:
    "Data gaps" section. Never guess or invent numbers, names, or dates.
 4. Format the brief with these sections: Snapshot, Risks, Opportunities,
    Talking points for the meeting, Data gaps.
-5. Keep it under 450 words. A busy TAM will read this five minutes before the call.
+5. Keep it under 400 words. This is a hard limit: if the brief runs long, cut
+   Opportunities first, then detail in Snapshot. A busy TAM will read this five minutes
+   before the call.
 7. If asked a portfolio question (several accounts, not one brief), answer with
    a short ranked list instead of the full brief format.
 6. Flag any tickets regardless of level that are open for more than 14 days.
@@ -99,7 +101,7 @@ tools = [
 
 
 # ---- 5. The LOOP, now wrapped in a function --------------------------------
-def run_agent(question):
+def run_agent(question, calls=None, quiet=False):
     messages = [{"role": "user", "content": question}]
 
     for step in range(MAX_STEPS):
@@ -118,7 +120,10 @@ def run_agent(question):
         tool_results = []
         for block in response.content:
             if block.type == "tool_use":
-                print(f"[step {step + 1}: calling {block.name} with {block.input}]")
+                if calls is not None:
+                    calls.append(block.name)  # lets the test script see which tools ran
+                if not quiet:
+                    print(f"[step {step + 1}: calling {block.name} with {block.input}]")
                 func = TOOL_FUNCTIONS.get(block.name)
                 if func is None:
                     result = {"error": f"Unknown tool '{block.name}'."}

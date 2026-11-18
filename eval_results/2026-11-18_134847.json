@@ -1,0 +1,311 @@
+[
+  {
+    "test": "Hooli brief: flags old tickets, cites tools",
+    "run": 1,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "# Hooli QBR Brief\n\n## Snapshot\n- ARR is $400,000. Renewal date is 2027-01-18, which the tool lists as 60 days out. [get_renewal_info]\n- The champion is Gavin Bell, CTO Office. [get_renewal_info]\n- The last executive contact was 2026-07-11, 130 days ago. [get_renewal_info]\n- 430 of 1,200 purchased seats are active (about 36%). [get_usage]\n- Logins are down 35% against the prior 30 days. [get_usage]\n- There are 4 open tickets: 2 P1 and 2 P2. [get_open_tickets]\n\n## Risks\n- **Open P1 tickets:**\n  - T-4118, \"Mass logout across all users\", has been open 5 days. [get_open_tickets]\n  - T-4120, \"Admin console returns 500 errors\", has been open 3 days. [get_open_tickets]\n- **Tickets open more than 14 days (flagged):**\n  - T-4075, P2, \"Okta sync delay\", has been open 33 days. [get_open_tickets]\n  - T-4099, P2, \"Audit log export incomplete\", has been open 19 days. [get_open_tickets]\n- **Low adoption with a falling trend:** about 36% seat usage and logins down 35% [get_usage]. This is close to the renewal window.\n- **Weak executive relationship:** no executive contact in 130 days, with renewal about 2 months away. [get_renewal_info]\n- Recommendation: Treat this as a high renewal risk. The P1s, the Okta sync issue and the login drop may be connected, but the tools don't show a cause.\n\n## Opportunities\n- Recommendation: If the stability issues are fixed, a seat right-sizing or re-enablement plan could protect the $400K ARR.\n\n## Talking points for the meeting\n1. Give a status and ETA for both P1s, and say who owns each. Recommendation: Get an RCA commitment before the meeting if you can.\n2. Explain why the two P2s have been open for 33 and 19 days, and give a resolution plan.\n3. Ask Gavin Bell what is driving the usage decline. Recommendation: Ask whether the mass logout or the Okta sync delay is part of it.\n4. Agree an adoption recovery plan, such as training or rollout to inactive seats, with target numbers.\n5. Recommendation: Re-establish executive contact and set up a renewal-planning conversation.\n\n## Data gaps\n- The tools give no root cause for the login decline or the P1 outages.\n- There is no ticket history, so I can't tell whether the issues are recurring.\n- There is no seat breakdown by team or user, and no contract or expansion details.\n- The tool says 60 days to renewal, but I count 61 days from 2026-11-18 to 2027-01-18. Please confirm the date.",
+    "failed_checks": []
+  },
+  {
+    "test": "Hooli brief: flags old tickets, cites tools",
+    "run": 2,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "# Hooli QBR Brief\n\n## Snapshot\n- ARR is $400,000. Renewal is 2027-01-18, which is 60 days out. [get_renewal_info]\n- Champion is Gavin Bell, CTO Office. [get_renewal_info]\n- Last executive contact was 2026-07-11, which is 130 days ago. [get_renewal_info]\n- 430 of 1,200 purchased seats are active, about 36% (my arithmetic). [get_usage]\n- Logins are down 35% against the prior 30 days. [get_usage]\n\n## Risks\n- **Two open P1s:**\n  - T-4118, \"Mass logout across all users\", opened 2026-11-13, open 5 days. [get_open_tickets]\n  - T-4120, \"Admin console returns 500 errors\", opened 2026-11-15, open 3 days. [get_open_tickets]\n- **Tickets open more than 14 days (flagged):**\n  - T-4075, P2, \"Okta sync delay\", open 33 days. [get_open_tickets]\n  - T-4099, P2, \"Audit log export incomplete\", open 19 days. [get_open_tickets]\n- Low adoption, falling logins and a renewal 60 days away are all present at once. [get_usage] [get_renewal_info]\n- Executive engagement has gone quiet for 130 days. [get_renewal_info]\n- Recommendation: Treat this renewal as at risk. Seat usage is under 50%, and the unresolved stability and identity issues could explain the login drop. The data doesn't establish that link.\n\n## Opportunities\n- Recommendation: If the tickets are resolved, an adoption push could recover the roughly 770 inactive seats (1,200 minus 430, my arithmetic). Gavin Bell could sponsor it.\n\n## Talking points for the meeting\n1. Recommendation: Open with the P1s. Give a status, root cause and ETA for T-4118 and T-4120, and own the impact.\n2. Recommendation: Explain why the Okta sync (33 days) and audit log export (19 days) are still open. Commit to dates.\n3. Recommendation: Ask what is driving the 35% login decline and which teams are inactive. Propose an adoption plan with milestones.\n4. Recommendation: Re-establish executive contact. Ask Gavin Bell for an exec sponsor meeting before renewal, and confirm the renewal timeline and stakeholders.\n5. Recommendation: Before the call, agree internally on whether to right-size seats or offer a remediation package, so you aren't improvising if they raise the renewal.\n\n## Data gaps\n- No ticket owners, status updates or root-cause notes. [get_open_tickets]\n- No seat or login history beyond the 30-day trend, and no breakdown by team or user. [get_usage]\n- No name for the last executive contact, and no contract or pricing detail. [get_renewal_info]\n- No information on whether the login decline and the tickets are related.",
+    "failed_checks": []
+  },
+  {
+    "test": "Hooli brief: flags old tickets, cites tools",
+    "run": 3,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "# Hooli QBR Brief\n\n## Snapshot\n- ARR is $400,000. Renewal is 2027-01-18, which is 60 days out. [get_renewal_info]\n- The champion is Gavin Bell, CTO Office. [get_renewal_info]\n- 430 of 1,200 purchased seats are active, about 36%. [get_usage]\n- Logins are down 35% against the prior 30 days. [get_usage]\n- The last executive contact was 2026-07-11, 130 days ago. [get_renewal_info]\n\n## Risks\n- **Two open P1 tickets:**\n  - T-4118, \"Mass logout across all users,\" has been open 5 days. [get_open_tickets]\n  - T-4120, \"Admin console returns 500 errors,\" has been open 3 days. [get_open_tickets]\n- **Tickets open more than 14 days (flagged):**\n  - T-4075 (P2), \"Okta sync delay,\" has been open 33 days. [get_open_tickets]\n  - T-4099 (P2), \"Audit log export incomplete,\" has been open 19 days. [get_open_tickets]\n- **Low adoption with falling engagement:** only about 36% of seats are active and logins are down 35%. [get_usage]\n- **Stale executive relationship:** there has been no executive contact for 130 days, and renewal is 60 days away. [get_renewal_info]\n- Recommendation: Treat this renewal as at risk. Low adoption, declining logins, unresolved P1s and a lapsed executive relationship together put the $400K renewal in danger.\n\n## Opportunities\n- Recommendation: Offer a seat right-sizing or adoption plan. It could protect the renewal and show the customer you are acting in their interest.\n- Recommendation: Use Gavin Bell as the route to re-engage executives.\n\n## Talking points for the meeting\n1. Recommendation: Open with the P1s. Give a status, root cause and ETA for T-4118 and T-4120 before anything else.\n2. Recommendation: Own the two aging P2s (Okta sync, audit log export). Bring a resolution date for each.\n3. Recommendation: Ask why usage is down. The mass logout and Okta sync issues may be contributing, but that is a hypothesis and not tool data.\n4. Recommendation: Propose an adoption plan with targets for the 770 inactive seats. That figure is 1,200 minus 430, from [get_usage].\n5. Recommendation: Ask for an executive sponsor meeting before the renewal.\n\n## Data gaps\n- Nothing in the tools explains the usage drop, so its cause is unknown.\n- I have no data on contract terms, on expansion potential, or on which teams hold the inactive seats.\n- The tool reports 60 days to renewal, but 2026-11-18 to 2027-01-18 is 61 days by my count. This is a minor discrepancy, so confirm the date.",
+    "failed_checks": []
+  },
+  {
+    "test": "Initech: admits missing executive contact",
+    "run": 1,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "**Initech QBR Brief**\n\n**Snapshot**\n- ARR is $60,000. [get_renewal_info]\n- The renewal date is 2027-03-16, which is 117 days away. [get_renewal_info]\n- The champion is Sam Ortiz, IT Manager. [get_renewal_info]\n- 110 of 200 purchased seats are active, which is 55%. [get_usage]\n- The 30-day login trend is flat. [get_usage]\n\n**Risks**\n- **Ticket open more than 14 days:** T-4031 is a P2, \"Intermittent MFA prompt loops.\" It was opened 2026-11-02 and has been open 16 days. [get_open_tickets]\n- **Unused seats:** 90 seats are not active. [get_usage] Flat logins mean there is no sign of adoption growth. [get_usage]\n- **Executive contact:** There is no record of executive contact. [get_renewal_info]\n- Recommendation: An unresolved MFA problem could hurt user adoption and the renewal conversation. Treat it as the top issue to address.\n\n**Opportunities**\n- Recommendation: Use the 90 inactive seats as the basis for an enablement or rollout plan with Sam Ortiz. Activating them would strengthen the case for renewal.\n\n**Talking points for the meeting**\n1. Give a status update on T-4031 and a committed resolution date. Recommendation: Get an engineering update before the call.\n2. Ask why 90 seats are inactive. Find out which teams or users are not using the product, and agree on an activation plan.\n3. Start renewal planning now. The renewal is about 4 months away.\n4. Recommendation: Ask Sam Ortiz to introduce you to an executive sponsor.\n\n**Data gaps**\n- Last executive contact is null, so I can't say when or whether an executive was last engaged. [get_renewal_info]\n- The tools gave no data on the reasons for low adoption, on which seats are inactive, or on contract history.",
+    "failed_checks": []
+  },
+  {
+    "test": "Initech: admits missing executive contact",
+    "run": 2,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "**Initech QBR Brief**\n\n**Snapshot**\n- ARR is $60,000. Renewal is 2027-03-16, which is 117 days away. [get_renewal_info]\n- The champion is Sam Ortiz, IT Manager. [get_renewal_info]\n- 110 of 200 purchased seats are active, which is 55%. [get_usage]\n- The 30-day login trend is flat. [get_usage]\n\n**Risks**\n- **Ticket open more than 14 days:** T-4031 is a P2, \"Intermittent MFA prompt loops\". It was opened 2026-11-02 and has been open 16 days. [get_open_tickets]\n- **Unused seats:** 90 seats are inactive. [get_usage] Recommendation: expect this to come up as a seat-reduction or price push at renewal.\n- **No executive contact on record:** the last executive contact date is missing. [get_renewal_info] Recommendation: treat the executive relationship as unconfirmed until you verify it.\n- **Single champion:** Sam Ortiz is the only named contact. [get_renewal_info] Recommendation: build more relationships beyond Sam.\n- **Flat logins:** usage isn't growing. [get_usage]\n\n**Opportunities**\n- Recommendation: a plan to activate the 90 idle seats would support the renewal and protect the current seat count.\n\n**Talking points for the meeting**\n1. Give a status and an owner/ETA for T-4031 (MFA loops). Recommendation: lead with this, since an unresolved authentication issue could be suppressing adoption. That link is my hypothesis, not tool data.\n2. Ask what is blocking the other 90 seats. Recommendation: propose a rollout or training plan with a target active-seat number.\n3. Recommendation: ask Sam to introduce an executive sponsor, and start renewal discussions early.\n4. Confirm Initech's goals for the next two quarters.\n\n**Data gaps**\n- `last_exec_contact` and `days_since_exec_contact` are null, so I can't say when anyone last spoke with an executive. [get_renewal_info]\n- The tools give no login volume, so I can't say how many logins \"flat\" means. They also give no ticket history, satisfaction scores or product-level usage.",
+    "failed_checks": []
+  },
+  {
+    "test": "Initech: admits missing executive contact",
+    "run": 3,
+    "passed": false,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "**Initech QBR brief**\n\n**Snapshot**\n- ARR is $60,000. Renewal is 2027-03-16, 117 days out. [get_renewal_info]\n- The champion is Sam Ortiz, IT Manager. [get_renewal_info]\n- 110 of 200 purchased seats are active, which is 55%. [get_usage]\n- The 30-day login trend is flat. [get_usage]\n\n**Risks**\n- **Ticket open more than 14 days:** T-4031 is a P2, \"Intermittent MFA prompt loops\". It was opened 2026-11-02 and has been open 16 days. [get_open_tickets]\n- 90 seats are unused, which is 45% of the contract. [get_usage]\n- Logins are flat, so there is no sign of adoption growth. [get_usage]\n- There is no executive contact on record. [get_renewal_info]\n- Recommendation: The unused seats, the lack of executive contact and the open P2 could together put the renewal at risk. The champion is an IT Manager, and an MFA problem probably lands on his team.\n\n**Opportunities**\n- Recommendation: Run an enablement push to bring active seats up before renewal. If adoption doesn't improve, expect a conversation about reducing seats.\n\n**Talking points for the meeting**\n1. Give a status and ETA on T-4031 (MFA loops). Recommendation: Get an engineering update before the call.\n2. Ask Sam why 90 seats are inactive. Find out whether the cause is rollout, training or licensing that is no longer needed.\n3. Agree on a seat-activation target and a plan before the 2027-03-16 renewal.\n4. Recommendation: Ask Sam to introduce you to an executive sponsor, or offer an executive check-in.\n\n**Data gaps**\n- The last executive contact date is null, so I can't say when anyone last spoke with an executive. [get_renewal_info]\n- The tools gave no seat breakdown by team or department, no login counts, and no contract history.\n- The tools gave no information on the account's sentiment or its goals. Confirm these with Sam.",
+    "failed_checks": [
+      "mentions one of ['no record', 'not on file', 'missing']..."
+    ]
+  },
+  {
+    "test": "Soylent: admits missing champion",
+    "run": 1,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "**Soylent QBR Brief**\n\n**Snapshot**\n- ARR is $45,000. [get_renewal_info]\n- Renewal is 2027-09-04, which is 289 days away. [get_renewal_info]\n- 85 of 90 purchased seats are active, which is about 94%. [get_usage]\n- Logins are up 12% over the prior 30 days. [get_usage]\n- There are no open support tickets, so nothing is open for more than 14 days. [get_open_tickets]\n- The last executive contact was 2026-09-19, which is 60 days ago. [get_renewal_info]\n\n**Risks**\n- No customer champion is on record. [get_renewal_info]\n- Executive contact is 60 days old. [get_renewal_info]\n- Recommendation: Treat the missing champion as the main risk. Adoption is healthy, but the renewal depends on a named advocate, and none is recorded.\n- Recommendation: The renewal is far enough away that none of this is urgent. Fix it now, while it is cheap to do.\n\n**Opportunities**\n- 5 purchased seats are inactive. [get_usage]\n- Recommendation: Rising logins suggest room to grow. Ask whether other teams want access. Don't pitch an expansion until you know the account's goals.\n\n**Talking points for the meeting**\n- Recommendation: Share the adoption results: 94% seat utilization and a 12% rise in logins. Ask what is driving the increase.\n- Recommendation: Ask who the day-to-day owner of the product is, and who would advocate for it at renewal.\n- Recommendation: Ask whether the 5 inactive seats are unneeded or were never onboarded.\n- Recommendation: Confirm the account's goals for the next 12 months. Offer to book an executive check-in, since the last one was in September.\n- Recommendation: Check that the customer is happy with support. No tickets are open, but that doesn't show how they feel about it.\n\n**Data gaps**\n- The champion field is null, so I don't know who the champion is. [get_renewal_info]\n- The tools gave me no data on the customer's goals, product-feature usage, or past ticket history. I can't comment on satisfaction or on what drove the login increase.",
+    "failed_checks": []
+  },
+  {
+    "test": "Soylent: admits missing champion",
+    "run": 2,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "# Soylent QBR Brief\n\n## Snapshot\n- ARR is $45,000. [get_renewal_info]\n- Renewal date is 2027-09-04, which the tool lists as 289 days out. [get_renewal_info]\n- Adoption is 85 of 90 seats active, which is about 94%. [get_usage]\n- Logins are up 12% over the prior 30 days. [get_usage]\n- There are no open support tickets, so none are open for more than 14 days. [get_open_tickets]\n- The last executive contact was 2026-09-19, which is 60 days ago. [get_renewal_info]\n\n## Risks\n- **No champion is on record.** The champion field is null. [get_renewal_info]\n- **Executive contact is 60 days old.** [get_renewal_info]\n- Recommendation: Treat the missing champion as the main risk. Adoption is strong, but without a named sponsor the renewal depends on relationships you can't see. The renewal is far off, so you have time to fix this.\n\n## Opportunities\n- Adoption is healthy and engagement is rising. [get_usage]\n- Recommendation: Use that momentum to identify a champion, and consider asking about expansion. Only 5 seats are unused, so more seats would depend on the customer's growth plans.\n\n## Talking points for the meeting\n- Recommendation: Share the usage story: 94% seat activation and logins up 12%.\n- Recommendation: Ask who owns the product's success on their side, and who benefits most from it. This could surface a champion.\n- Recommendation: Ask about their goals for the next 12 months and how the product fits.\n- Recommendation: Offer an executive check-in to refresh the 60-day-old contact.\n- Recommendation: Confirm they have no unreported issues. The ticket queue is empty, but that doesn't prove satisfaction.\n\n## Data gaps\n- The champion is not recorded. [get_renewal_info]\n- I can't see why logins rose, which features are used, or customer sentiment. None of the tools provide this.\n- The tool says 289 days to renewal. By my count from 2026-11-18 to 2027-09-04 it is 290. This is a minor discrepancy, so confirm the date if it matters.",
+    "failed_checks": []
+  },
+  {
+    "test": "Soylent: admits missing champion",
+    "run": 3,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "**Soylent QBR brief**\n\n**Snapshot**\n- ARR is $45,000. Renewal is 2027-09-04, which the tool lists as 289 days out. [get_renewal_info]\n- 85 of 90 purchased seats are active, which is about 94%. [get_usage]\n- Logins are up 12% against the prior 30 days. [get_usage]\n- There are no open support tickets, so nothing is open longer than 14 days. [get_open_tickets]\n- The last executive contact was 2026-09-19, which is 60 days ago. [get_renewal_info]\n\n**Risks**\n- No champion is on record. [get_renewal_info]\n- Executive contact is 60 days old. [get_renewal_info]\n- Recommendation: Treat the missing champion as the main risk. Adoption is strong, but without a named advocate the renewal depends on relationships you can't see.\n- Recommendation: Book an executive touchpoint soon. The renewal is far off, so this is a relationship gap rather than an urgent threat.\n\n**Opportunities**\n- 5 seats are purchased but inactive. [get_usage]\n- Recommendation: Adoption is high and rising, so explore expansion or additional use cases. Confirm demand first, because the data doesn't show any.\n\n**Talking points for the meeting**\n- Recommendation: Open with the adoption results: 94% seat utilization and logins up 12%.\n- Recommendation: Ask who owns the product day to day, and who should be the champion.\n- Recommendation: Ask what business outcomes they want in the next year, and whether the 5 idle seats need enablement or a reduction.\n- Recommendation: Use the clean support record as a positive. Ask about any unlogged frustrations.\n- Recommendation: Propose a regular executive check-in cadence.\n\n**Data gaps**\n- The champion field is null, so I can't name a customer contact. [get_renewal_info]\n- The tools give no data on sentiment, product features used, or expansion intent.\n- The tool's 289 days to renewal looks one day off from my own count of 290 from today's date. Verify the renewal date before quoting it.",
+    "failed_checks": []
+  },
+  {
+    "test": "Pied Piper: admits missing renewal record, no invented date",
+    "run": 1,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "**Pied Piper QBR Brief**\n\n**Snapshot**\n- 20 of 60 purchased seats are active, which is about 33% [get_usage].\n- The 30-day login trend is flat [get_usage].\n- There are no open support tickets [get_open_tickets].\n- ARR is $30,000 [get_renewal_info].\n\n**Risks**\n- Adoption is low. 40 seats are unused, and logins show no sign of growth [get_usage].\n- The renewal date is unknown, so I can't judge how much time you have to fix adoption [get_renewal_info].\n- No tickets are open, so none are over 14 days [get_open_tickets].\n- Recommendation: Treat this as a renewal risk until you confirm the date. Paying for 60 seats and using 20 invites a downsizing request.\n\n**Opportunities**\n- Recommendation: Run an enablement or onboarding push for the inactive seats. If the customer doesn't need those seats, discuss right-sizing.\n\n**Talking points for the meeting**\n- Recommendation: Ask why only 20 of 60 seats are active. Look at which teams or roles haven't been onboarded, and whether the cause is a lack of need, training, or a blocker.\n- Recommendation: Agree on a seat-activation target and a timeline.\n- Recommendation: Ask who the stakeholders are, and confirm the renewal timing and process with them.\n- Recommendation: Ask whether any problems are going unreported, since there are no tickets.\n\n**Data gaps**\n- There is no renewal record on file. The renewal date, days until renewal, champion, and days since last executive contact are all unavailable [get_renewal_info].\n- Because the champion and executive-contact data are missing, I can't assess relationship strength.\n- Recommendation: Check the CRM or the contract directly for the renewal date and champion before the call.",
+    "failed_checks": []
+  },
+  {
+    "test": "Pied Piper: admits missing renewal record, no invented date",
+    "run": 2,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "**Pied Piper QBR brief**\n\n**Snapshot**\n- 20 of 60 purchased seats are active, which is about 33% adoption. [get_usage]\n- The 30-day login trend is flat. [get_usage]\n- ARR is $30,000. [get_renewal_info]\n- There are no open support tickets. [get_open_tickets]\n\n**Risks**\n- Adoption is low. About two-thirds of the seats are unused. [get_usage]\n- Logins are flat, so there's no sign of adoption growing. [get_usage]\n- There is no renewal record, so the renewal date is unknown. [get_renewal_info]\n- Recommendation: Unused seats on a $30K account could lead to a downsizing request at renewal. Treat this as a possible churn or contraction risk until you confirm the renewal date.\n- No tickets are open, so none are over 14 days old. [get_open_tickets]\n\n**Opportunities**\n- Recommendation: Run enablement or onboarding for the 40 inactive seats. Full adoption would strengthen the case for renewal. Alternatively, right-size the contract proactively.\n\n**Talking points for the meeting**\n- Recommendation: Ask why only 20 of 60 seats are active. Look for blockers such as the wrong teams being licensed, training gaps, or a missing use case.\n- Recommendation: Ask which teams or use cases could use the unused seats, and agree on a target active-seat count for the next quarter.\n- Recommendation: Confirm the renewal timeline and who the decision-makers are.\n- Recommendation: Ask whether the customer's experience matches the lack of tickets. No tickets may mean things are fine, or it may mean they have disengaged.\n\n**Data gaps**\n- Renewal date, days until renewal, champion, and days since last executive contact are all missing. The tool returned \"No renewal record on file.\" [get_renewal_info]\n- Because the executive contact date is missing, I can't judge relationship strength.\n- Before the call, check your CRM for the renewal date and champion.",
+    "failed_checks": []
+  },
+  {
+    "test": "Pied Piper: admits missing renewal record, no invented date",
+    "run": 3,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "**Pied Piper QBR brief**\n\n**Snapshot**\n- 20 of 60 purchased seats are active, which is about 33% [get_usage].\n- The 30-day login trend is flat [get_usage].\n- There are no open support tickets [get_open_tickets].\n- ARR is $30,000 [get_renewal_info].\n\n**Risks**\n- Adoption is low. Two-thirds of the seats are unused [get_usage]. Logins are flat, so usage isn't recovering by itself [get_usage].\n- The renewal date, the days until renewal, the champion and the last executive contact are all missing. The tool returned \"No renewal record on file.\" [get_renewal_info]\n- Recommendation: Treat this as a renewal risk until the renewal date is confirmed. Paying for 60 seats while using 20 often leads to a downsize request or churn.\n- No tickets are open, so none are older than 14 days [get_open_tickets].\n\n**Opportunities**\n- Recommendation: Use the 40 idle seats as the reason to run an enablement or onboarding push. This could include role-based training, or finding which teams were meant to use the product and aren't.\n\n**Talking points for the meeting**\n- Recommendation: Ask why only 20 of 60 seats are active. Find out whether the cause is rollout, fit or ownership.\n- Recommendation: Agree on a target for active seats and a 30\u201360 day plan to reach it.\n- Recommendation: Confirm who the champion is and the renewal timeline with the customer. Ask who the executive sponsor is.\n- Recommendation: Ask about any issues that aren't in the ticket queue, since an empty queue doesn't show they're satisfied.\n\n**Data gaps**\n- There is no renewal record, so the renewal date and days to renewal are unavailable [get_renewal_info].\n- The champion and the days since the last executive contact are unavailable [get_renewal_info].\n- Recommendation: Check the CRM or the contract directly before the call. Don't assume the renewal is far off.",
+    "failed_checks": []
+  },
+  {
+    "test": "Unknown account: says so, invents no numbers",
+    "run": 1,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info",
+      "get_renewal_info",
+      "find_renewals_within"
+    ],
+    "answer": "I can't write a QBR brief for Wayne Enterprises because my tools have no account by that name.\n\n- All three account lookups returned \"No account named 'Wayne Enterprises' found\" [get_usage, get_open_tickets, get_renewal_info].\n- \"Wayne\" alone also returned no match [get_renewal_info].\n- I searched renewals over the next 365 days. Wayne Enterprises isn't in that list [find_renewals_within]. The accounts that are:\n  - Vandelay Industries\n  - Umbrella Corp\n  - Hooli\n  - Acme\n  - Initech\n  - Globex\n  - Soylent\n\n**Data gaps:** I have no usage, ticket, renewal, champion, or executive-contact data for Wayne Enterprises. I haven't guessed any of it.\n\n**Recommendation:** Check how the account is named in your system. It may be spelled differently, or it may be a subsidiary or parent record. It may also not be loaded yet, or it may renew more than 365 days out. Tell me the exact name and I'll run the brief. If you meant one of the accounts listed above, tell me which and I'll prep that one.",
+    "failed_checks": []
+  },
+  {
+    "test": "Unknown account: says so, invents no numbers",
+    "run": 2,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info",
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info"
+    ],
+    "answer": "I can't give you a QBR brief for Wayne Enterprises because the tools don't recognize the account. I tried \"Wayne Enterprises\" and \"Wayne\". Usage, tickets and renewal info all returned \"No account named \u2026 found.\" I haven't included any numbers or details because I have no data to base them on.\n\n**Data gaps**\n- **Usage:** seats purchased vs. active, and the login trend. [get_usage returned an error]\n- **Tickets:** open tickets, including any open more than 14 days. [get_open_tickets returned an error]\n- **Renewal:** renewal date, contract value, champion, and days since the last executive contact. [get_renewal_info returned an error]\n\n**Recommendation:** Try one of these:\n1. Give me the exact account name as it appears in your CRM. It may be abbreviated or spelled differently, for example \"Wayne Corp\" or \"WayneTech\".\n2. I can run a portfolio search, such as accounts renewing in the next 30, 60 or 90 days, or accounts with low adoption. If Wayne is in the system, its name should show up there, and then I can build the full brief.\n\nWould you like me to run the portfolio search?",
+    "failed_checks": []
+  },
+  {
+    "test": "Unknown account: says so, invents no numbers",
+    "run": 3,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info",
+      "get_usage",
+      "get_open_tickets",
+      "get_renewal_info",
+      "find_renewals_within",
+      "get_at_risk_accounts"
+    ],
+    "answer": "I can't write a QBR brief for Wayne Enterprises because the tools have no data for it.\n\n**What I tried**\n- I looked up \"Wayne Enterprises\" and then \"Wayne\" in `get_usage`, `get_open_tickets` and `get_renewal_info`. Every call returned \"No account named \u2026 found.\"\n- I checked the portfolio lists to see whether the account is filed under another name. It isn't in `find_renewals_within` (365-day window) or in `get_at_risk_accounts`.\n\n**Accounts that do exist in the system**\n- These are the accounts that appear in those two lists: Vandelay Industries, Umbrella Corp, Hooli, Acme, Initech, Globex, Soylent and Pied Piper.\n- None of them looks like a variant of Wayne Enterprises.\n\n**Data gaps**\n- Wayne Enterprises has no usage, ticket or renewal data, including contract value, champion and executive contact.\n- It may be listed under a different name or a parent account. It may also be missing from the system, or it may renew more than 365 days out. Pied Piper appears only in the at-risk list, so accounts with distant renewals can be missing from the renewal list.\n\n**Next step**\n- Can you confirm the exact account name as it appears in your CRM? Or did you mean one of the accounts above? I'll build the brief as soon as I have a name the tools recognize.\n- I haven't written any Wayne Enterprises figures or talking points. I'd only be guessing, and that could mislead you in the meeting.",
+    "failed_checks": []
+  },
+  {
+    "test": "Renewals question uses the portfolio tool",
+    "run": 1,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "find_renewals_within"
+    ],
+    "answer": "Two accounts renew in the next 60 days, soonest first [find_renewals_within]:\n\n1. **Vandelay Industries**: renews 2026-12-08, 19 days out, $95,000 ARR [find_renewals_within]\n2. **Umbrella Corp**: renews 2026-12-26, 37 days out, $180,000 ARR [find_renewals_within]\n\n**Data gaps:** Counting from today (2026-11-18), those dates are 20 and 38 days away. The tool reports 19 and 37, so it is one day off from my count. Check the renewal dates in your CRM.\n\nRecommendation: Start with Vandelay because it renews first. Umbrella is almost twice the ARR, so give it equal prep time. I can pull usage, open tickets, and executive contact for either account and write a full QBR brief if you want one.",
+    "failed_checks": []
+  },
+  {
+    "test": "Renewals question uses the portfolio tool",
+    "run": 2,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "find_renewals_within"
+    ],
+    "answer": "**Renewals in the next 60 days, soonest first**\n\n1. **Vandelay Industries**: $95,000 ARR, renews 2026-12-08, 19 days out [find_renewals_within]\n2. **Umbrella Corp**: $180,000 ARR, renews 2026-12-26, 37 days out [find_renewals_within]\n\n**Data gap:** The day counts don't match today's date (2026-11-18). By my count, Dec 8 is 20 days away and Dec 26 is 38 days away. The tool reports 19 and 37. The gap is one day, probably a date or timezone difference. Check the renewal dates in your CRM.\n\nRecommendation: Prioritize Vandelay because its renewal is sooner. Umbrella Corp is worth nearly twice the ARR, so it also needs early attention. I can pull usage, tickets, and executive-contact data for either account and write a full QBR brief if you want one.",
+    "failed_checks": []
+  },
+  {
+    "test": "Renewals question uses the portfolio tool",
+    "run": 3,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "find_renewals_within"
+    ],
+    "answer": "Two accounts renew in the next 60 days, soonest first [find_renewals_within]:\n\n1. **Vandelay Industries**: $95,000 ARR, renews 2026-12-08, 19 days out [find_renewals_within].\n2. **Umbrella Corp**: $180,000 ARR, renews 2026-12-26, 37 days out [find_renewals_within].\n\nData gap: the tool's day counts are each one day shorter than what I get from today's date (2026-11-18). By my count, Vandelay is 20 days out and Umbrella is 38. The renewal dates themselves are unaffected.\n\nRecommendation: Vandelay renews first, but Umbrella is the larger contract at almost twice the ARR. I can run the full QBR brief on either account or both. That would cover usage, open tickets, and executive contact.",
+    "failed_checks": []
+  },
+  {
+    "test": "Low adoption question uses the at-risk tool",
+    "run": 1,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_at_risk_accounts"
+    ],
+    "answer": "Accounts using fewer than 50% of their purchased seats, worst first:\n\n1. **Vandelay Industries**: 40 of 150 seats active (27%) [get_at_risk_accounts]\n2. **Pied Piper**: 20 of 60 seats active (33%) [get_at_risk_accounts]\n3. **Acme**: 180 of 500 seats active (36%) [get_at_risk_accounts]\n4. **Hooli**: 430 of 1,200 seats active (36%) [get_at_risk_accounts]\n\nRecommendation: Hooli and Acme have the most unused seats, 770 and 320. Vandelay has the lowest percentage. If you want to prioritize by renewal exposure, I can pull renewal dates and contract values for these accounts. I can also build a full QBR brief for any one of them.",
+    "failed_checks": []
+  },
+  {
+    "test": "Low adoption question uses the at-risk tool",
+    "run": 2,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_at_risk_accounts"
+    ],
+    "answer": "Accounts using fewer than 50% of their purchased seats, worst first:\n\n1. **Vandelay Industries**: 40 of 150 seats active, 27% [get_at_risk_accounts]\n2. **Pied Piper**: 20 of 60 seats active, 33% [get_at_risk_accounts]\n3. **Acme**: 180 of 500 seats active, 36% [get_at_risk_accounts]\n4. **Hooli**: 430 of 1,200 seats active, 36% [get_at_risk_accounts]\n\nRecommendation: Acme and Hooli have the same utilization percentage. Hooli has far more unused seats (770, against 320 for Acme). That could make it the larger expansion or churn exposure if it renews soon. I haven't checked renewal dates or contract values. I can pull those, plus open tickets, to rank these by renewal urgency or full QBR briefs for any of them.",
+    "failed_checks": []
+  },
+  {
+    "test": "Low adoption question uses the at-risk tool",
+    "run": 3,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_at_risk_accounts"
+    ],
+    "answer": "Accounts using fewer than 50% of their purchased seats, worst first [get_at_risk_accounts]:\n\n1. **Vandelay Industries**: 40 of 150 seats active (27%) [get_at_risk_accounts]\n2. **Pied Piper**: 20 of 60 seats active (33%) [get_at_risk_accounts]\n3. **Acme**: 180 of 500 seats active (36%) [get_at_risk_accounts]\n4. **Hooli**: 430 of 1,200 seats active (36%) [get_at_risk_accounts]\n\nAcme and Hooli have the same utilization percentage. Hooli has the larger gap, with 770 unused seats against Acme's 320 [get_at_risk_accounts].\n\nRecommendation: Check renewal dates and open tickets for these four accounts to decide which to prioritize. I can run a full QBR brief on any of them.",
+    "failed_checks": []
+  },
+  {
+    "test": "Chaining: low adoption AND renewing soon",
+    "run": 1,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_at_risk_accounts",
+      "find_renewals_within"
+    ],
+    "answer": "**Low-adoption accounts (<50% seats active) renewing within 90 days, soonest first:**\n\n1. **Vandelay Industries** renews 2026-12-08, 19 days out [find_renewals_within].\n   - ARR is $95,000 [find_renewals_within].\n   - 40 of 150 seats are active, or 27% [get_at_risk_accounts].\n   - It has the lowest adoption in the portfolio and the nearest renewal.\n2. **Hooli** renews 2027-01-18, 60 days out [find_renewals_within].\n   - ARR is $400,000, the largest at-risk dollar exposure [find_renewals_within].\n   - 430 of 1,200 seats are active, or 36% [get_at_risk_accounts].\n3. **Acme** renews 2027-02-02, 75 days out [find_renewals_within].\n   - ARR is $120,000 [find_renewals_within].\n   - 180 of 500 seats are active, or 36% [get_at_risk_accounts].\n\n**Not on the list**\n- **Pied Piper** has low adoption (20 of 60 seats, 33%) [get_at_risk_accounts]. It doesn't renew within 90 days [find_renewals_within].\n- **Umbrella Corp** renews in the window (2026-12-26, $180,000 ARR) [find_renewals_within]. It isn't on the low-adoption list [get_at_risk_accounts].\n\n**Data gaps**\n- I didn't pull tickets, executive contact, or login trends. I can run a full QBR brief on any of these accounts.\n- The days-to-renewal figures from the tool look one day short of what the dates give for today (2026-11-18). For Vandelay, 2026-12-08 is 20 days away, not 19. The order is unaffected.\n\nRecommendation: Start with Vandelay because its renewal is closest and its adoption is lowest. Hooli is next because of its $400K ARR.",
+    "failed_checks": []
+  },
+  {
+    "test": "Chaining: low adoption AND renewing soon",
+    "run": 2,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_at_risk_accounts",
+      "find_renewals_within"
+    ],
+    "answer": "**Low-adoption accounts (under 50% seats active) renewing within 90 days, soonest first**\n\n1. **Vandelay Industries** renews 2026-12-08, in 19 days [find_renewals_within].\n   - ARR is $95,000 [find_renewals_within].\n   - 40 of 150 seats are active, or 27% [get_at_risk_accounts].\n   - It has the lowest adoption in the portfolio and the nearest renewal.\n2. **Hooli** renews 2027-01-18, in 60 days [find_renewals_within].\n   - ARR is $400,000, the largest dollar exposure on this list [find_renewals_within].\n   - 430 of 1,200 seats are active, or 36% [get_at_risk_accounts].\n3. **Acme** renews 2027-02-02, in 75 days [find_renewals_within].\n   - ARR is $120,000 [find_renewals_within].\n   - 180 of 500 seats are active, or 36% [get_at_risk_accounts].\n\n**Not on the list**\n- **Pied Piper** is low-adoption at 33% (20 of 60 seats) [get_at_risk_accounts]. It doesn't appear in the 90-day renewal window [find_renewals_within].\n- **Umbrella Corp** renews in 37 days [find_renewals_within]. It isn't flagged as low-adoption [get_at_risk_accounts].\n\n**Data gaps**\n- I haven't pulled tickets, executive contact, or login trends for these accounts.\n- The \"days to renewal\" figures from the tool are one day less than I get by counting from today (2026-11-18). I used the tool's figures.\n\nRecommendation: Start with Vandelay because of the 19-day timeline. Hooli has the most ARR at stake, so give it the next most attention. I can run a full QBR brief on any of these accounts if you want one.",
+    "failed_checks": []
+  },
+  {
+    "test": "Chaining: low adoption AND renewing soon",
+    "run": 3,
+    "passed": true,
+    "error": null,
+    "tools_called": [
+      "get_at_risk_accounts",
+      "find_renewals_within"
+    ],
+    "answer": "**Low-adoption accounts (under 50% of seats active) renewing within 90 days, soonest first:**\n\n1. **Vandelay Industries** renews 2026-12-08, in 19 days. ARR is $95k [find_renewals_within]. 40 of 150 seats are active, or 27% [get_at_risk_accounts]. This is the lowest adoption in the portfolio and the nearest renewal.\n2. **Hooli** renews 2027-01-18, in 60 days. ARR is $400k [find_renewals_within]. 430 of 1,200 seats are active, or 36% [get_at_risk_accounts]. This is the largest ARR at stake.\n3. **Acme** renews 2027-02-02, in 75 days. ARR is $120k [find_renewals_within]. 180 of 500 seats are active, or 36% [get_at_risk_accounts].\n\n**Not in the overlap:**\n- **Pied Piper** has low adoption, with 20 of 60 seats active (33%) [get_at_risk_accounts]. It doesn't appear in the 90-day renewal list [find_renewals_within].\n- **Umbrella Corp** renews in 37 days, with ARR of $180k [find_renewals_within]. It isn't on the low-adoption list [get_at_risk_accounts].\n\n**Total ARR at stake:** $615k across the three accounts. I added this up from the tool figures.\n\n**Recommendation:** Start with Vandelay because its window is shortest. Hooli should get the most executive attention because it has the most ARR. I can run full QBR briefs on any of these, including tickets, executive contact and champion data. I haven't pulled those yet.",
+    "failed_checks": []
+  }
+]
