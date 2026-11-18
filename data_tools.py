@@ -54,7 +54,7 @@ def get_open_tickets(account):
             return _not_found(account)
         rows = conn.execute(
             """SELECT id, priority, opened, subject,
-                      CAST(julianday('now') - julianday(opened) AS INTEGER) AS days_open
+                      CAST(julianday(date('now','localtime')) - julianday(opened) AS INTEGER) AS days_open
                FROM tickets
                WHERE account_id = ? AND status = 'open'
                ORDER BY priority, opened""",
@@ -70,8 +70,8 @@ def get_renewal_info(account):
             return _not_found(account)
         row = conn.execute(
             """SELECT renewal_date, champion, last_exec_contact,
-                      CAST(julianday(renewal_date) - julianday('now') AS INTEGER) AS days_to_renewal,
-                      CAST(julianday('now') - julianday(last_exec_contact) AS INTEGER) AS days_since_exec_contact
+                      CAST(julianday(renewal_date) - julianday(date('now','localtime')) AS INTEGER) AS days_to_renewal,
+                      CAST(julianday(date('now','localtime')) - julianday(last_exec_contact) AS INTEGER) AS days_since_exec_contact
                FROM renewals WHERE account_id = ?""",
             (acct["id"],),
         ).fetchone()
@@ -89,10 +89,10 @@ def find_renewals_within(days):
     with closing(_connect()) as conn:
         rows = conn.execute(
             """SELECT a.name, a.arr_usd, r.renewal_date,
-                      CAST(julianday(r.renewal_date) - julianday('now') AS INTEGER) AS days_to_renewal
+                      CAST(julianday(r.renewal_date) - julianday(date('now','localtime')) AS INTEGER) AS days_to_renewal
                FROM renewals r
                JOIN accounts a ON a.id = r.account_id
-               WHERE julianday(r.renewal_date) - julianday('now') BETWEEN 0 AND ?
+               WHERE julianday(r.renewal_date) - julianday(date('now','localtime')) BETWEEN 0 AND ?
                ORDER BY r.renewal_date""",
             (days,),
         ).fetchall()

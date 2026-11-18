@@ -15,6 +15,8 @@ import data_tools
 client = anthropic.Anthropic()
 MODEL = "claude-sonnet-5-5"
 MAX_STEPS = 10  # safety limit: the loop can never run forever
+MAX_WORDS = 400    # guardrail: keep this in sync with rule 5 in the system prompt
+MAX_REWRITES = 2   # guardrail: how many times we'll ask for a shorter version
 
 # ---- 1. The SYSTEM PROMPT: the agent's playbook ----------------------------
 # This is where your real TAM experience goes. Edit it and watch the output change.
@@ -100,7 +102,42 @@ tools = [
 ]
 
 
-# ---- 5. The LOOP, now wrapped in a function --------------------------------
+# ---- 5. The GUARDRAIL: enforce the length limit in code --------------------
+# Rule 5 in the prompt ASKS for a short brief. This function CHECKS, and if the
+# brief is too long it sends it back for a rewrite. The model can ignore a request;
+# it can't skip a check that your code runs.
+def enforce_length(answer, messages, quiet=False):
+    for _ in range(MAX_REWRITES):
+        words = len(answer.split())
+        if words <= MAX_WORDS:
+            return answer
+        if not quiet:
+            print(f"[guardrail: {words} words is over the {MAX_WORDS}-word limit, asking for a shorter version]")
+        messages.append({
+            "role": "user",
+            "content": (f"That is {words} words. Rewrite it in under {MAX_WORDS} words. "
+                        "Keep the section headings and the [tool_name] citations. "
+                        "Cut Opportunities first, then detail in Snapshot. Add nothing new."),
+        })
+        response = client.messages.create(
+            model=MODEL,
+            max_tokens=2048,
+            system=SYSTEM_PROMPT,
+            tools=tools,
+            tool_choice={"type": "none"},  # rewrite only; no more tool calls
+            messages=messages,
+        )
+        messages.append({"role": "assistant", "content": response.content})
+        answer = next(b.text for b in response.content if b.type == "text")
+
+    # Still too long after every retry. Don't chop it mid-sentence; say so honestly.
+    words = len(answer.split())
+    if words > MAX_WORDS:
+        answer += f"\n\n[Note: this brief is {words} words, over the {MAX_WORDS}-word limit.]"
+    return answer
+
+
+# ---- 6. The LOOP, now wrapped in a function --------------------------------
 def run_agent(question, calls=None, quiet=False):
     messages = [{"role": "user", "content": question}]
 
@@ -115,7 +152,8 @@ def run_agent(question, calls=None, quiet=False):
         messages.append({"role": "assistant", "content": response.content})
 
         if response.stop_reason != "tool_use":
-            return next(b.text for b in response.content if b.type == "text")
+            answer = next(b.text for b in response.content if b.type == "text")
+            return enforce_length(answer, messages, quiet)
 
         tool_results = []
         for block in response.content:

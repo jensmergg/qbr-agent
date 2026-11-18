@@ -14,7 +14,8 @@ from pathlib import Path
 # Phrases that signal "I don't have that data". Checks look for ANY of these.
 GAP_WORDS = ["no record", "not on file", "missing", "no data", "not available",
              "isn't available", "no renewal", "don't have", "do not have", "unknown",
-             "not provided", "not listed"]
+             "not provided", "not listed", "on record", "null", "not recorded",
+             "no executive", "gave no"]
 
 # ---- The test list ----------------------------------------------------------
 # Each test is a question plus checks on the answer. Available checks:
@@ -29,7 +30,7 @@ CASES = [
         "question": "Prep me for Hooli's QBR.",
         "must_call": ["get_usage", "get_open_tickets", "get_renewal_info"],
         "must_contain": ["T-4075", "T-4099", "[get_"],
-        "max_words": 450,
+        "max_words": 400,
     },
     {
         "name": "Initech: admits missing executive contact",
