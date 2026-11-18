@@ -28,7 +28,7 @@ Rules:
 2. Anything that is your judgment or general experience, not tool data, must be
    labeled "Recommendation:" so the reader can tell it apart from facts.
 3. If data you need is missing or a tool returns an error, say so in a
-   "Data gaps" section.
+   "Data gaps" section. Never guess or invent numbers, names, or dates.
 4. Format the brief with these sections: Snapshot, Risks, Opportunities,
    Talking points for the meeting, Data gaps.
 5. Keep it under 450 words. A busy TAM will read this five minutes before the call.
@@ -48,6 +48,7 @@ TOOL_FUNCTIONS = {
     "get_open_tickets": data_tools.get_open_tickets,
     "get_renewal_info": data_tools.get_renewal_info,
     "find_renewals_within": data_tools.find_renewals_within,
+    "get_at_risk_accounts": data_tools.get_at_risk_accounts,
 }
 
 # ---- 4. The TOOL DEFINITIONS: what the model sees ---------------------------
@@ -86,6 +87,13 @@ tools = [
             "properties": {"days": {"type": "integer", "description": "Look-ahead window in days, e.g. 60"}},
             "required": ["days"],
         },
+    },
+    {
+        "name": "get_at_risk_accounts",
+        "description": "List ALL accounts using fewer than 50% of their purchased seats, "
+                       "worst first. Use for portfolio questions like 'which accounts have "
+                       "low adoption?', not for one account.",
+        "input_schema": {"type": "object", "properties": {}},
     },
 ]
 

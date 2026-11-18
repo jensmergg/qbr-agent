@@ -97,3 +97,17 @@ def find_renewals_within(days):
             (days,),
         ).fetchall()
         return {"within_days": days, "renewals": [dict(r) for r in rows]}
+
+
+def get_at_risk_accounts():
+    """Portfolio question: which accounts use fewer than half their seats?"""
+    with closing(_connect()) as conn:
+        rows = conn.execute(
+            """SELECT a.name, u.seats_purchased, u.seats_active,
+                      ROUND(100.0 * u.seats_active / u.seats_purchased) AS utilization_pct
+               FROM usage u
+               JOIN accounts a ON a.id = u.account_id
+               WHERE 1.0 * u.seats_active / u.seats_purchased < 0.5
+               ORDER BY utilization_pct"""
+        ).fetchall()
+        return {"at_risk_accounts": [dict(r) for r in rows]}
