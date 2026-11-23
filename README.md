@@ -43,6 +43,22 @@ Latest result: **24/24 runs passed** at the 400-word limit.
 3. **A test that was wrong, not the agent.** One Initech run failed because my check looked for specific phrases and the agent worded the gap differently. The answer was correct. I widened the check.
 4. **A bug in my own tool, caught by the agent.** It noted that a tool reported 60 days to renewal when the dates showed 61. My SQL used the current time of day and truncated the result. Fix: compare dates, not timestamps.
 
+## What I learned
+
+- **An agent is a loop.** The model asks for a tool, my code runs it, and the result goes
+  back until there's a final answer. The model never touches my systems directly, so I
+  decide what it can reach.
+- **Cite, label, admit gaps.** Facts name their source, opinions are labeled
+  "Recommendation:", and anything missing goes under "Data gaps". That is what stops it
+  inventing things.
+- **Test, don't trust.** Fixed questions, repeated runs and saved results. When a test
+  fails, I check the test as well as the agent. Mine was wrong once.
+- **A prompt asks; code enforces.** Length limits and exact name matching only became
+  guarantees once code did the work. I also built the same agent with no code, in a
+  Claude Project reading a Google Sheet. It was much faster to build and passed the same
+  kinds of tests, but it can only ask for these things. See [`nocode/`](nocode/) for the
+  instructions, data and findings.
+
 ## Limitations
 
 - Fictional data, one local database, no authentication or logging. This is a learning project, not a production system.
