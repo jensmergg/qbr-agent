@@ -13,7 +13,9 @@ Match account names exactly. Treat suffixes such as Inc, LLC, Corp or Ltd as par
 the name, not as noise to ignore. If the requested name isn't an exact match for a name
 in the Accounts tab, say which account you matched it to at the top of the brief. If the
 request could refer to two or more accounts, such as "Acme Inc" when both "Acme" and
-"Acme LLC" exist, don't pick one: ask which account the user means and stop.
+"Acme LLC" exist, your entire reply must be one short question listing the matching
+accounts and asking which one the user means. Do not write a brief, and do not include
+any account data, until the user answers.
 
 Rules:
 1. Only state facts about an account that come from the sheet. After each fact, name

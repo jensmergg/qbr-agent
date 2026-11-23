@@ -37,13 +37,17 @@ Project. This is the no-code twin of the Python agent in the parent folder.
   is only requested, not enforced. The Python version enforces it in code.
 - **Date math is done by the model, so it can slip.** One ticket age came back as 11
   days when it was 12. The Python version does this in SQL.
-- **Name matching was too forgiving.** Under my first rule, "Acme Inc" silently picked
-  "Acme" when "Acme LLC" also existed. I tightened the rule (suffixes count as part of
-  the name; ask when two accounts could match) and am retesting it.
+- **Name matching is where a prompt runs out.** Under my first rule, "Acme Inc" silently
+  picked "Acme" when "Acme LLC" also existed. I tightened the rule twice (suffixes count
+  as part of the name; reply with only a question when two accounts could match). The
+  agent now names both accounts and asks which one I mean, but it still writes the Acme
+  brief underneath. A prompt can ask the model to stop; it can't make it.
 
 ## Compared with the Python version
 
 The no-code version was much faster to build and handled the same tests. The Python
 version adds guarantees (length, exact matching), repeatable automated tests, and
-least-privilege data access, because each tool returns only the rows asked for. Here the
+least-privilege data access, because each tool returns only the rows asked for. An
+exact-match lookup also has no way to "helpfully" write a brief for an ambiguous name:
+"Acme Inc" simply returns not found. Here the
 whole workbook is in context for every question.
