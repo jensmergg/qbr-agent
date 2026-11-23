@@ -1,0 +1,13 @@
+Ticket ID,Account,Priority,Status,Opened,Subject
+T-4012,Acme,P1,open,2026-10-29,SSO login failures for contractors
+T-4107,Acme,P1,open,2026-11-06,SCIM provisioning sync stalled
+T-3988,Acme,P3,open,2026-10-21,Request: custom audit report
+T-3801,Acme,P2,closed,2026-09-19,Slow admin console load
+T-4090,Globex,P3,open,2026-11-10,Question about SAML attribute mapping
+T-4031,Initech,P2,open,2026-11-02,Intermittent MFA prompt loops
+T-3950,Umbrella Corp,P3,closed,2026-10-09,Password policy question
+T-4120,Hooli,P1,open,2026-11-15,Admin console returns 500 errors
+T-4118,Hooli,P1,open,2026-11-13,Mass logout across all users
+T-4099,Hooli,P2,open,2026-10-30,Audit log export incomplete
+T-4075,Hooli,P2,open,2026-10-16,Okta sync delay
+T-4101,Vandelay Industries,P3,open,2026-11-09,Question about onboarding templates

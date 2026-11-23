@@ -1,0 +1,10 @@
+Account,Industry,ARR (USD),Seats purchased,Seats active,Login trend (30 days),Renewal date,Champion,Last executive contact
+Acme,Software,"$120,000",500,180,down 22% vs prior 30 days,2027-02-02,"Dana Whitfield, IT Director",2026-08-16
+Acme LLC,Technology,"$85,000",350,200,flat,2027-04-01,"Mike Freet, Security Manager",
+Globex,Manufacturing,"$240,000",800,720,up 6% vs prior 30 days,2027-07-01,"Priya Raman, Security Lead",2026-10-28
+Initech,Financial services,"$60,000",200,110,flat,2027-03-16,"Sam Ortiz, IT Manager",
+Umbrella Corp,Healthcare,"$180,000",350,300,up 2% vs prior 30 days,2026-12-26,"Wen Li, Head of IT",2026-10-04
+Hooli,Technology,"$400,000","1,200",430,down 35% vs prior 30 days,2027-01-18,"Gavin Bell, CTO Office",2026-07-11
+Soylent,Food and beverage,"$45,000",90,85,up 12% vs prior 30 days,2027-09-04,,2026-09-19
+Vandelay Industries,Logistics,"$95,000",150,40,down 10% vs prior 30 days,2026-12-08,"Art Kramer, Operations Director",2026-05-02
+Pied Piper,Technology,"$30,000",60,20,flat,,,

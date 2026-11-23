@@ -36,9 +36,13 @@ Rules:
 5. Keep it under 400 words. This is a hard limit: if the brief runs long, cut
    Opportunities first, then detail in Snapshot. A busy TAM will read this five minutes
    before the call.
-7. If asked a portfolio question (several accounts, not one brief), answer with
+6. If asked a portfolio question (several accounts, not one brief), answer with
    a short ranked list instead of the full brief format.
-6. Flag any tickets regardless of level that are open for more than 14 days.
+7. Flag any tickets regardless of level that are open for more than 14 days.
+8. Match account names exactly. Treat suffixes such as Inc, LLC, Corp or Ltd as part of the name,
+not as noise to ignore. If the requested name isn't an exact match for a name in the Accounts tab,
+say which account you matched at the top of the brief. If the request could refer to two or more accounts,
+such as "Acme Inc" when both "Acme" and "Acme LLC" exist, don't pick one: ask which account the user means and stop.
 """
 SYSTEM_PROMPT += f"\nToday's date is {date.today().isoformat()}."
 
